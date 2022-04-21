@@ -1,0 +1,9 @@
+name: Deploy a web-server
+
+steps:
+        -name: 'gcr.io/cloud-builders/docker'
+        args: ['build', '-t', 'gcr.io/assignment-3-347906/assignment3deploy:$SHA', '.']
+        -name: 'gcr.io/cloud-builders/docker'
+        args: ['push', 'gcr.io/assignment-3-347906/assignment3deploy:$SHA']
+        -name: 'gcr.io/cloud-builders/gcloud'
+        args: ['beta', 'run', 'deploy', 'assignment-3-347906', '--region=us-central1', '--platform=managed', '--image=gcr.io/assignment-3-347906/assignment-3-347906:$SHA'] 
