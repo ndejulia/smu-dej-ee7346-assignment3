@@ -71,4 +71,4 @@ jobs:
         uses: 'google-github-actions/setup-gcloud@v0'
 
       - name: 'Build on gcloud'
-        run: 'gcloud builds submit --tag gcr.io/$PROJECT_ID/$SERVICE'       
+        run: 'gcloud builds submit --tag us.gcr.io/$PROJECT_ID/$SERVICE'       
