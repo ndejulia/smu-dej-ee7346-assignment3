@@ -50,10 +50,8 @@ on:
       - main
 
 env:
-  PROJECT_ID: YOUR_PROJECT_ID # TODO: update Google Cloud project id
-  GAR_LOCATION: YOUR_GAR_LOCATION # TODO: update Artifact Registry location
-  SERVICE: YOUR_SERVICE_NAME # TODO: update Cloud Run service name
-  REGION: YOUR_SERVICE_REGION # TODO: update Cloud Run service region
+  PROJECT_ID: assignment-3-347906 # TODO: update Google Cloud project id
+  SERVICE: assignment3-web # TODO: update Cloud Run service name
 
 #Setup Google Authentication, Google Cloud
 jobs:
@@ -72,5 +70,5 @@ jobs:
       - name: 'Cloud-SDK'
         uses: 'google-github-actions/setup-gcloud@v0'
 
-      - name: 'List service accounts'
-        run: 'gcloud iam service-accounts list'       
+      - name: 'Build on gcloud'
+        run: 'gcloud builds submit --tag gcr.io/$PROJECT_ID/$SERVICE'       
