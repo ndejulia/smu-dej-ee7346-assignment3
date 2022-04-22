@@ -52,7 +52,6 @@ on:
 env:
   PROJECT_ID: assignment-3-347906 # TODO: update Google Cloud project id
   SERVICE: assignment3-web # TODO: update Cloud Run service name
-  SERVICEACC: ${{ secrets.serviceacc }}'
 
 #Setup Google Authentication, Google Cloud
 jobs:
@@ -76,4 +75,4 @@ jobs:
 
 
       - name: 'Deploy on gcloud'
-        run: 'gcloud run deploy $SERVICE --image=us.gcr.io/$PROJECT_ID/$SERVICE:latest --region=us-central1 --allow-unauthenticated --service-account=$SERVICEACC'    
+        run: 'gcloud run deploy $SERVICE --image=us.gcr.io/$PROJECT_ID/$SERVICE:latest --region=us-central1 --allow-unauthenticated --service-account=assignment3-serviceaccount@assignment-3-347906.iam.gserviceaccount.com'    
