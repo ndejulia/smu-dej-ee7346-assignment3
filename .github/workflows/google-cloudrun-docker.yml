@@ -76,4 +76,4 @@ jobs:
 
 
       - name: 'Deploy on gcloud'
-        run: 'gcloud run deploy $SERVICE --image=us.gcr.io/$PROJECT_ID/$SERVICE:latest --region=us-central1 --allow-unauthenticated --service-account=SERVICEACC'    
+        run: 'gcloud run deploy $SERVICE --image=us.gcr.io/$PROJECT_ID/$SERVICE:latest --region=us-central1 --allow-unauthenticated --service-account=$SERVICEACC'    
