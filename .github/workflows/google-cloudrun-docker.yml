@@ -72,3 +72,7 @@ jobs:
 
       - name: 'Build on gcloud'
         run: 'gcloud builds submit --tag us.gcr.io/$PROJECT_ID/$SERVICE'       
+
+
+      - name: 'Deploy on gcloud'
+        run: 'gcloud run deploy $SERVICE --image=us.gcr.io/$PROJECT_ID/$SERVICE:latest --region=us-central1 --alow-unauthenticated'    
